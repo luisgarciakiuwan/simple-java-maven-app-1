@@ -15,3 +15,14 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml -DskipTests
+    - name: Kiuwan Baseline Analysis
+      uses: lsacera/KiuwanBaselineAction@v0.4
+      with:
+         # Name of Kiuwan project
+         project: pepe
+         # Label of the analysis
+         label: github  
+         # Username for kiuwan platform
+         userid: ${{ secrets.KIUWAN_USER }}
+         # Password for kiuwan platform
+         password: ${{ secrets.KIUWAN_PASS }}
